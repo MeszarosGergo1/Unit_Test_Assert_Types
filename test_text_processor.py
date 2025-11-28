@@ -19,6 +19,8 @@ def test_reverse_text_in():
     processor = TextProcessor()
     result = processor.reverse_text("hello")
     assert "olleh" in result
+    assert "h" in result
+    assert "hello" not in result
 
 
 def test_reverse_text_not_in():
@@ -26,11 +28,16 @@ def test_reverse_text_not_in():
     processor = TextProcessor()
     result = processor.reverse_text("hello")
     assert "hello" not in result
+    assert "world" not in result
+    assert "x" not in result
 
 
 def test_count_words_isinstance():
     """5. Assert isinstance - típus ellenőrzés"""
-    pass
+    processor = TextProcessor()
+    result = processor.count_words("This is a test")
+    assert isinstance(result, int)
+    assert isinstance(processor.count_words("hello world"), int) 
 
 
 def test_count_words_greater_less():
