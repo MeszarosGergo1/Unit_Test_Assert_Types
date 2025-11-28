@@ -57,12 +57,16 @@ def test_count_words_empty_string():
     processor = TextProcessor()
     result = processor.count_words("")
     assert result == 0
+    assert result is not None
 
 
 def test_is_palindrome_true_false():
     """8. Assert True/False - boolean ellenőrzés"""
     processor = TextProcessor()
     assert processor.is_palindrome("anna") is True
+    assert processor.is_palindrome("indul a pap aludni") is True
+    assert processor.is_palindrome("icipici") is True
+    assert processor.is_palindrome("a") is True
     assert processor.is_palindrome("hello") is False
     assert processor.is_palindrome("") is False
 
