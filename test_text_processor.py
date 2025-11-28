@@ -78,3 +78,5 @@ def test_remove_spaces_multiple_asserts():
     assert result == "abcde"
     assert " " not in result
     assert len(result) == 5
+    assert result.startswith("a")
+    assert result.endswith("e")
